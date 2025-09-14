@@ -10,28 +10,37 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        app:title="Gestión de usuarios"
+        app:title="Menu"
         app:titleCentered="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Tabs arriba en lugar de menú lateral (mejor en móvil) -->
+    <!-- Tabs -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:tabMode="scrollable"
         app:tabIndicatorFullWidth="false"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-        <com.google.android.material.tabs.TabItem android:text="Gestión de usuarios"/>
-        <com.google.android.material.tabs.TabItem android:text="Dispositivos"/>
-        <com.google.android.material.tabs.TabItem android:text="Reportes"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gestión de usuarios"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dispositivos"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reportes"/>
     </com.google.android.material.tabs.TabLayout>
 
-    <!-- Contenido scrollable entre tabs y bottom bar -->
+    <!-- Contenido scrollable (sin bottom bar) -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll"
         android:layout_width="0dp"
@@ -39,7 +48,7 @@
         android:fillViewport="true"
         android:padding="12dp"
         app:layout_constraintTop_toBottomOf="@id/tabs"
-        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -48,6 +57,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- Selección de operador -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,7 +66,6 @@
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Tarjeta con “tabla” -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -147,20 +156,13 @@
                 </TableLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Botones -->
+            <!-- SOLO botón Editar (se quita 'Eliminar operador') -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:orientation="horizontal"
                 android:layout_marginBottom="12dp">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnEliminarOperador"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Eliminar operador" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnEditarOperador"
@@ -170,7 +172,7 @@
                     android:layout_marginStart="8dp" />
             </LinearLayout>
 
-            <!-- Form edición -->
+            <!-- Tarjeta: Añadir/Registrar nuevo operador -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -184,10 +186,10 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/tvTituloEdicion"
+                        android:id="@+id/tvTituloRegistro"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Editar datos de operador (Op01)"
+                        android:text="Añadir nuevo operador"
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:layout_marginBottom="12dp" />
@@ -204,17 +206,17 @@
                         android:layout_marginTop="4dp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etCorreo"
+                            android:id="@+id/etCorreoNuevo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="operador1@empresa.com"
+                            android:hint="nuevo_operador@empresa.com"
                             android:inputType="textEmailAddress" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nueva contraseña:"
+                        android:text="Contraseña:"
                         android:layout_marginTop="12dp"
                         android:textSize="13sp" />
 
@@ -224,76 +226,27 @@
                         android:layout_marginTop="4dp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etNuevaPassword"
+                            android:id="@+id/etPasswordNuevo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="(dejar en blanco si no cambia)"
+                            android:hint="********"
                             android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <LinearLayout
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRegistrarOperador"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="end"
-                        android:layout_marginTop="16dp">
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnGuardar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Guardar cambios" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnCancelar"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Cancelar"
-                            android:layout_marginStart="8dp" />
-                    </LinearLayout>
+                        android:layout_height="56dp"
+                        android:text="Registrar"
+                        android:layout_marginTop="16dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Extra bottom space para que no lo tape la bottom bar -->
+            <!-- Espacio final para respiración -->
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="16dp"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Bottom bar fija -->
-    <LinearLayout
-        android:id="@+id/bottomBar"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:paddingHorizontal="12dp"
-        android:gravity="center_vertical"
-        android:background="#F5F6F8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@android:drawable/sym_def_app_icon"
-            android:contentDescription="@null" />
-
-        <TextView
-            android:id="@+id/tvAdmin"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingStart="8dp"
-            android:text="Admin"
-            android:textSize="14sp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSalir"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Salir" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

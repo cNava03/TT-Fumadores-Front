@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Registrar_cuenta">
+
+<!-- Título -->
+<TextView
+    android:id="@+id/tvTitleRegister"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="100dp"
+    android:layout_marginEnd="24dp"
+    android:text="Crear nueva cuenta"
+    android:textAlignment="center"
+    android:textColor="@color/black"
+    android:textSize="28sp"
+    android:textStyle="bold"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<!-- Link para ir a Login -->
+<TextView
+    android:id="@+id/tvGoLogin"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="24dp"
+    android:text="¿Ya estás registrado? Inicia sesión"
+    android:textAlignment="center"
+    android:textColor="#3F51B5"
+    android:textSize="14sp"
+    android:textStyle="bold"
+    app:layout_constraintTop_toBottomOf="@id/tvTitleRegister"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<!-- Nombre -->
+<TextView
+    android:id="@+id/tvNombre"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="24dp"
+    android:layout_marginEnd="24dp"
+    android:text="Nombre"
+    android:textColor="@color/black"
+    android:textSize="14sp"
+    app:layout_constraintTop_toBottomOf="@id/tvGoLogin"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<EditText
+    android:id="@+id/etNombre"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="24dp"
+    android:background="@drawable/boton_redondeado"
+    android:hint="Usuario"
+    android:imeOptions="actionNext"
+    android:inputType="textPersonName"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:textColor="@color/black"
+    android:textColorHint="@color/black"
+    app:layout_constraintTop_toBottomOf="@id/tvNombre"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<!-- Correo -->
+<TextView
+    android:id="@+id/tvCorreo"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="24dp"
+    android:text="Correo"
+    android:textColor="@color/black"
+    android:textSize="14sp"
+    app:layout_constraintTop_toBottomOf="@id/etNombre"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<EditText
+    android:id="@+id/etEmailRegister"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="24dp"
+    android:autofillHints="emailAddress"
+    android:background="@drawable/boton_redondeado"
+    android:hint="Email"
+    android:imeOptions="actionNext"
+    android:inputType="textEmailAddress"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:textColor="@color/black"
+    android:textColorHint="@color/black"
+    app:layout_constraintTop_toBottomOf="@id/tvCorreo"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<!-- Contraseña -->
+<TextView
+    android:id="@+id/tvPass1"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="24dp"
+    android:text="Contraseña"
+    android:textColor="@color/black"
+    android:textSize="14sp"
+    app:layout_constraintTop_toBottomOf="@id/etEmailRegister"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<EditText
+    android:id="@+id/etPasswordRegister"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="24dp"
+    android:background="@drawable/boton_redondeado"
+    android:drawableEnd="@drawable/ic_eye"
+    android:hint="Password"
+    android:imeOptions="actionNext"
+    android:inputType="textPassword"
+    android:paddingStart="20dp"
+    android:paddingEnd="16dp"
+    android:textColor="@color/black"
+    android:textColorHint="@color/black"
+    app:layout_constraintTop_toBottomOf="@id/tvPass1"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<!-- Repite contraseña -->
+<TextView
+    android:id="@+id/tvPass2"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="24dp"
+    android:text="Repite la contraseña"
+    android:textColor="@color/black"
+    android:textSize="14sp"
+    app:layout_constraintTop_toBottomOf="@id/etPasswordRegister"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<EditText
+    android:id="@+id/etPasswordConfirm"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="24dp"
+    android:background="@drawable/boton_redondeado"
+    android:drawableEnd="@drawable/ic_eye"
+    android:hint="Password"
+    android:imeOptions="actionDone"
+    android:inputType="textPassword"
+    android:paddingStart="20dp"
+    android:paddingEnd="16dp"
+    android:textColor="@color/black"
+    android:textColorHint="@color/black"
+    app:layout_constraintTop_toBottomOf="@id/tvPass2"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+<!-- Botón registrar -->
+<Button
+    android:id="@+id/btnSignUp"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="28dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginBottom="24dp"
+    android:backgroundTint="#000000"
+    android:text="Crear cuenta"
+    android:textSize="16sp"
+    app:layout_constraintTop_toBottomOf="@id/etPasswordConfirm"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,24 @@
         android:theme="@style/Theme.TTFumadoresFront"
         tools:targetApi="31">
         <activity
+            android:name=".Registrar_cuenta"
+            android:exported="false" />
+        <activity
+            android:name=".nuevodispositivo"
+            android:exported="false" />
+        <activity
+            android:name=".historialreportes"
+            android:exported="false" />
+        <activity
+            android:name=".Alerta"
+            android:exported="false" />
+        <activity
+            android:name=".Reportes"
+            android:exported="false" />
+        <activity
+            android:name=".Dispositivos"
+            android:exported="false" />
+        <activity
             android:name=".GestionUsuarios"
             android:exported="false" />
         <activity
