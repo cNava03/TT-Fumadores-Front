@@ -22,7 +22,8 @@ tools:context=".Registrar_cuenta">
     android:textStyle="bold"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
+    app:layout_constraintEnd_toEndOf="parent"
+    tools:ignore="HardcodedText" />
 
 <!-- Link para ir a Login -->
 <TextView
@@ -39,7 +40,8 @@ tools:context=".Registrar_cuenta">
     android:textStyle="bold"
     app:layout_constraintTop_toBottomOf="@id/tvTitleRegister"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
+    app:layout_constraintEnd_toEndOf="parent"
+    tools:ignore="HardcodedText" />
 
 <!-- Nombre -->
 <TextView
