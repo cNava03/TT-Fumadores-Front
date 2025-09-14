@@ -195,5 +195,6 @@ tools:context=".Registrar_cuenta">
     app:layout_constraintTop_toBottomOf="@id/etPasswordConfirm"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"/>
+    app:layout_constraintBottom_toBottomOf="parent"
+    tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
